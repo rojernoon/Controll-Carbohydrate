@@ -1,0 +1,25 @@
+<!doctype html>
+<meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″>
+<html lang="ja">
+<head>
+    <title>食べ物糖質一覧</title>
+</head>
+<body>
+    <h1>
+        データベースに登録されている食べ物の糖質一覧<br />
+        ※おおよそ1食分に含まれる糖質量
+    </h1>
+    <table border="3">
+        <tr>
+            <th>食べ物</th>
+            <th>糖質量(g)</th>
+        </tr>
+        {%for data in message%}
+        <tr>
+            <th>{{data[1]}}</th>
+            <th>{{data[2]}}</th>
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+</html>
