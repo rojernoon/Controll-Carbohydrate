@@ -9,5 +9,19 @@
     <h1>
         頑張りましょう
     </h1>
+    <h2>
+        <table border="3">
+            <tr>
+                <th>食べ物</th>
+                <th>糖質量(g)</th>
+            </tr>
+            {%for data in message%}
+            <tr>
+                <th>{{data[1]}}</th>
+                <th>{{data[2]}}</th>
+            </tr>
+            {%endfor%}
+        </table>
+    </h2>
 </body>
 </html>

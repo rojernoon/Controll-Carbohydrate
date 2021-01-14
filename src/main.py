@@ -13,12 +13,15 @@ def home():
 
 @app.route("/mypage")
 def mypage():
-    return render_template("mypage.html")
+    db = carbohydrate.database()
+    res = db.search_foods(20)
+    message = res
+    return render_template("mypage.html", message=message)
 
 @app.route("/food-list", methods=["GET"])
 def foodlist():
     db = carbohydrate.database()
-    res = db.do_sql()
+    res = db.show_all_foods()
     message = res
     return render_template("foodlist.html", message=message)
 
